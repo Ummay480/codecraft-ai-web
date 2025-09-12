@@ -18,6 +18,7 @@ const Header = () => {
           <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
           <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
           <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
+          <a href="#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
           <a href="#team" className="text-foreground hover:text-primary transition-colors">Team</a>
         </nav>
 
@@ -42,6 +43,7 @@ const Header = () => {
             <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
             <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
             <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
+            <a href="#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
             <a href="#team" className="text-foreground hover:text-primary transition-colors">Team</a>
             <div className="flex flex-col space-y-2 pt-4">
               <Button variant="ghost">Login</Button>
