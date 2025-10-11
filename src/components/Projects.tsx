@@ -103,6 +103,25 @@ const Projects = () => {
               </CardContent>
             </Card>
           </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden border-border/50">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl mb-2">OpenAI Agents Projects</CardTitle>
+                <CardDescription>Custom AI agents and automation solutions built with OpenAI SDK</CardDescription>
+              </CardHeader>
+              <CardContent className="p-0">
+                <video 
+                  controls 
+                  className="w-full"
+                  preload="metadata"
+                >
+                  <source src="/videos/OpenAI-SDK-Portfolio.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
