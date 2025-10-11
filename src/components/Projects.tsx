@@ -64,6 +64,26 @@ const Projects = () => {
           </p>
         </div>
 
+        {/* Portfolio Video Showcase */}
+        <div className="mb-16 max-w-4xl mx-auto">
+          <Card className="overflow-hidden border-border/50">
+            <CardHeader className="text-center">
+              <CardTitle className="text-2xl mb-2">Portfolio Showcase</CardTitle>
+              <CardDescription>Watch our latest projects in action</CardDescription>
+            </CardHeader>
+            <CardContent className="p-0">
+              <video 
+                controls 
+                className="w-full"
+                preload="metadata"
+              >
+                <source src="/videos/Lovable-portfolio.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </CardContent>
+          </Card>
+        </div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
             <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/20">
