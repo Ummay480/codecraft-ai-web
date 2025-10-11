@@ -65,23 +65,44 @@ const Projects = () => {
         </div>
 
         {/* Portfolio Video Showcase */}
-        <div className="mb-16 max-w-4xl mx-auto">
-          <Card className="overflow-hidden border-border/50">
-            <CardHeader className="text-center">
-              <CardTitle className="text-2xl mb-2">Portfolio Showcase</CardTitle>
-              <CardDescription>Watch our latest projects in action</CardDescription>
-            </CardHeader>
-            <CardContent className="p-0">
-              <video 
-                controls 
-                className="w-full"
-                preload="metadata"
-              >
-                <source src="/videos/Lovable-portfolio.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </CardContent>
-          </Card>
+        <div className="mb-16 space-y-8">
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden border-border/50">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl mb-2">Lovable Portfolio Showcase</CardTitle>
+                <CardDescription>Watch our latest Lovable projects in action</CardDescription>
+              </CardHeader>
+              <CardContent className="p-0">
+                <video 
+                  controls 
+                  className="w-full"
+                  preload="metadata"
+                >
+                  <source src="/videos/Lovable-portfolio.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden border-border/50">
+              <CardHeader className="text-center">
+                <CardTitle className="text-2xl mb-2">Full Stack Next.js Projects</CardTitle>
+                <CardDescription>Our comprehensive Next.js development portfolio</CardDescription>
+              </CardHeader>
+              <CardContent className="p-0">
+                <video 
+                  controls 
+                  className="w-full"
+                  preload="metadata"
+                >
+                  <source src="/videos/Web-Portfolio.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </CardContent>
+            </Card>
+          </div>
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
