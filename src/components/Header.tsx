@@ -24,7 +24,9 @@ const Header = () => {
 
         <div className="hidden md:flex items-center space-x-4">
           <Button variant="ghost">Login</Button>
-          <Button variant="hero" size="lg">Get Started</Button>
+          <Button variant="hero" size="lg" asChild>
+            <a href="#contact">Get Started</a>
+          </Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -47,7 +49,9 @@ const Header = () => {
             <a href="#team" className="text-foreground hover:text-primary transition-colors">Team</a>
             <div className="flex flex-col space-y-2 pt-4">
               <Button variant="ghost">Login</Button>
-              <Button variant="hero">Get Started</Button>
+              <Button variant="hero" asChild>
+                <a href="#contact">Get Started</a>
+              </Button>
             </div>
           </nav>
         </div>

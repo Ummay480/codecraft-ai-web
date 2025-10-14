@@ -42,8 +42,8 @@ const About = () => {
               ))}
             </div>
 
-            <Button variant="hero" size="lg">
-              Learn More About Us
+            <Button variant="hero" size="lg" asChild>
+              <a href="#team">Learn More About Us</a>
             </Button>
           </div>
 
