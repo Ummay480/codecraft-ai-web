@@ -178,7 +178,7 @@ const Projects = () => {
 
         <div className="text-center mt-12">
           <Button variant="hero" size="lg" asChild>
-            <a href="#contact">
+            <a href="#projects">
               View All Projects
             </a>
           </Button>
