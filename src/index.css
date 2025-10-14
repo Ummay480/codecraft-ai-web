@@ -82,9 +82,18 @@ All colors MUST be HSL.
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  /* Account for fixed header when scrolling to sections */
+  section[id] {
+    scroll-margin-top: 5rem;
   }
 
   /* Hero background pattern */
