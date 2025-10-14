@@ -136,13 +136,13 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between">
                     <Button size="sm" variant="secondary" asChild>
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <a href="#contact">
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Live Demo
                       </a>
                     </Button>
                     <Button size="sm" variant="secondary" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <a href="#contact">
                         <Github className="w-4 h-4 mr-2" />
                         Code
                       </a>
@@ -177,8 +177,10 @@ const Projects = () => {
         </div>
 
         <div className="text-center mt-12">
-          <Button variant="hero" size="lg">
-            View All Projects
+          <Button variant="hero" size="lg" asChild>
+            <a href="#contact">
+              View All Projects
+            </a>
           </Button>
         </div>
       </div>
