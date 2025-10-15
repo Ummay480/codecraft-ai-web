@@ -15,11 +15,26 @@ const Index = () => {
       if (!id) return;
       const el = document.getElementById(id);
       if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
+        // Cross-browser compatible scrolling
+        const headerOffset = 80;
+        const elementPosition = el.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        try {
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        } catch (e) {
+          // Fallback for browsers that don't support smooth scrolling
+          window.scrollTo(0, offsetPosition);
+        }
       }
     };
-    // Scroll on initial load
-    scrollToHash();
+    
+    // Small delay to ensure DOM is ready
+    setTimeout(scrollToHash, 100);
+    
     // Listen to hash changes
     window.addEventListener("hashchange", scrollToHash);
     return () => window.removeEventListener("hashchange", scrollToHash);
