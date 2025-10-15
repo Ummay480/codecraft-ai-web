@@ -10,6 +10,13 @@ export default defineConfig(({ mode }) => ({
     port: 8080,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+  // Better cross-browser compatibility (transpile optional chaining, etc.)
+  build: {
+    target: ["es2019", "safari13"],
+  },
+  esbuild: {
+    target: "es2019",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),

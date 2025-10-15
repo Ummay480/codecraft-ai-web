@@ -6,9 +6,9 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background */}
-      <div className="absolute inset-0 bg-gradient-subtle hero-pattern"></div>
+      <div className="pointer-events-none absolute inset-0 bg-gradient-subtle hero-pattern"></div>
       <div 
-        className="absolute inset-0 opacity-10"
+        className="pointer-events-none absolute inset-0 opacity-10"
         style={{ 
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
@@ -57,10 +57,10 @@ const Hero = () => {
           </div>
 
           {/* Floating Elements */}
-          <div className="absolute top-20 left-10 opacity-20 animate-float">
+          <div className="pointer-events-none absolute top-20 left-10 opacity-20 animate-float">
             <div className="w-20 h-20 bg-gradient-primary rounded-full blur-xl"></div>
           </div>
-          <div className="absolute bottom-20 right-10 opacity-20 animate-float" style={{ animationDelay: '1s' }}>
+          <div className="pointer-events-none absolute bottom-20 right-10 opacity-20 animate-float" style={{ animationDelay: '1s' }}>
             <div className="w-16 h-16 bg-primary-light rounded-full blur-xl"></div>
           </div>
         </div>

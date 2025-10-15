@@ -11,7 +11,8 @@ import Footer from "@/components/Footer";
 const Index = () => {
   useEffect(() => {
     const scrollToHash = () => {
-      const id = window.location.hash?.slice(1);
+      const hash = window.location.hash;
+      const id = hash ? hash.slice(1) : "";
       if (!id) return;
       const el = document.getElementById(id);
       if (el) {
