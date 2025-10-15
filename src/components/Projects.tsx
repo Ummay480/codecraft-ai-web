@@ -69,6 +69,25 @@ const Projects = () => {
           <div className="max-w-4xl mx-auto">
             <Card className="overflow-hidden border-border/50">
               <CardHeader className="text-center">
+                <CardTitle className="text-2xl mb-2">AI Presentation Portfolio</CardTitle>
+                <CardDescription>Comprehensive AI-powered presentation and development showcase</CardDescription>
+              </CardHeader>
+              <CardContent className="p-0">
+                <video 
+                  controls 
+                  className="w-full"
+                  preload="metadata"
+                >
+                  <source src="/videos/AI-Presentation-Portfolio.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="max-w-4xl mx-auto">
+            <Card className="overflow-hidden border-border/50">
+              <CardHeader className="text-center">
                 <CardTitle className="text-2xl mb-2">Lovable Portfolio Showcase</CardTitle>
                 <CardDescription>Watch our latest Lovable projects in action</CardDescription>
               </CardHeader>
