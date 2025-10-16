@@ -4,8 +4,8 @@ import ummayImage from "@/assets/team-ummay.jpg";
 import fouziaImage from "@/assets/team-fouzia.jpg";
 import tayyabaImage from "@/assets/team-tayyaba.jpg";
 import darakhshanImage from "@/assets/team-darakhshan.jpg";
-import afshanDesignerImage from "@/assets/team-afshan-designer.jpg";
-import afshanWriterImage from "@/assets/team-afshan-writer.jpg";
+import zainMalikImage from "@/assets/team-zain-malik.jpg";
+import muhammadAyanImage from "@/assets/team-muhammad-ayan.jpg";
 
 const teamMembers = [
   {
@@ -35,13 +35,13 @@ const teamMembers = [
   {
     name: "Zain Malik",
     role: "Marketing Manager",
-    image: afshanDesignerImage,
+    image: zainMalikImage,
     initials: "ZM"
   },
   {
     name: "Muhammad Ayan",
     role: "Full-Stack Developer",
-    image: afshanWriterImage,
+    image: muhammadAyanImage,
     initials: "MA"
   }
 ];
