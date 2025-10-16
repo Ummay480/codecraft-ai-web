@@ -16,31 +16,31 @@ const teamMembers = [
   },
   {
     name: "Ms. Fouzia",
-    role: "Backend Developer",
+    role: "Frontend Developer",
     image: fouziaImage,
     initials: "MF"
   },
   {
     name: "Ms. Laiqa",
-    role: "Frontend Developer",
+    role: "Backend Developer",
     image: tayyabaImage,
     initials: "ML"
   },
   {
     name: "Malia Raees",
-    role: "Digital Marketer",
+    role: "UI/UX Designer",
     image: darakhshanImage,
     initials: "MR"
   },
   {
     name: "Zain Malik",
-    role: "Designer",
+    role: "Marketing Manager",
     image: afshanDesignerImage,
     initials: "ZM"
   },
   {
     name: "Muhammad Ayan",
-    role: "Content Writer",
+    role: "Full-Stack Developer",
     image: afshanWriterImage,
     initials: "MA"
   }
