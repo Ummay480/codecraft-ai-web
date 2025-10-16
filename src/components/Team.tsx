@@ -21,25 +21,25 @@ const teamMembers = [
     initials: "MF"
   },
   {
-    name: "Ms. Tayyaba",
+    name: "Ms. Laiqa",
     role: "Frontend Developer",
     image: tayyabaImage,
-    initials: "MT"
+    initials: "ML"
   },
   {
-    name: "Ms. Darakhshan",
+    name: "Malia Raees",
     role: "Digital Marketer",
     image: darakhshanImage,
-    initials: "MD"
+    initials: "MR"
   },
   {
-    name: "Ms. Afshan",
+    name: "Zain Malik",
     role: "Designer",
     image: afshanDesignerImage,
-    initials: "MA"
+    initials: "ZM"
   },
   {
-    name: "Ms. Afshan",
+    name: "Muhammad Ayan",
     role: "Content Writer",
     image: afshanWriterImage,
     initials: "MA"
