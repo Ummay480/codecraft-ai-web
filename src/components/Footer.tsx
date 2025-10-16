@@ -10,28 +10,28 @@ const footerLinks = [
   {
     title: "Services",
     links: [
-      { name: "Web Development", href: "#services" },
-      { name: "AI Solutions", href: "#services" },
-      { name: "Mobile Apps", href: "#services" },
-      { name: "Consulting", href: "#services" }
+      { name: "Web Development", href: "/web-development" },
+      { name: "AI Solutions", href: "/ai-solutions" },
+      { name: "Mobile Apps", href: "/mobile-apps" },
+      { name: "Consulting", href: "/consulting" }
     ]
   },
   {
     title: "Company", 
     links: [
-      { name: "About Us", href: "#about" },
-      { name: "Our Team", href: "#team" },
-      { name: "Projects", href: "#projects" },
-      { name: "Contact", href: "#contact" }
+      { name: "About Us", href: "/#about" },
+      { name: "Our Team", href: "/#team" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/#contact" }
     ]
   },
   {
     title: "Resources",
     links: [
-      { name: "Services", href: "#services" },
-      { name: "Projects", href: "#projects" },
-      { name: "Team", href: "#team" },
-      { name: "Contact", href: "#contact" }
+      { name: "Blog", href: "/blog" },
+      { name: "Case Studies", href: "/case-studies" },
+      { name: "Documentation", href: "/documentation" },
+      { name: "Support", href: "/support" }
     ]
   }
 ];
@@ -95,13 +95,13 @@ const Footer = () => {
             </div>
             
             <div className="flex space-x-6 text-sm">
-              <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="/#about" className="text-muted-foreground hover:text-primary transition-colors">
                 About
               </a>
-              <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">
                 Services
               </a>
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="/#contact" className="text-muted-foreground hover:text-primary transition-colors">
                 Contact
               </a>
             </div>
