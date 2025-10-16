@@ -10,7 +10,7 @@ const contactInfo = [
     icon: Mail,
     title: "Email Us",
     description: "Get in touch via email",
-    contact: "ummay480@gmail.com"
+    contact: "codecraftai81@gmail.com"
   },
   {
     icon: Phone,

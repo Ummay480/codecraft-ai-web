@@ -1,10 +1,9 @@
-import { Github, Twitter, Linkedin, Mail } from "lucide-react";
+import { Facebook, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Mail, href: "#", label: "Email" }
+  { icon: Facebook, href: "https://www.facebook.com/codecraftai81", label: "Facebook" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/codecraft-ai-45bb2834b/", label: "LinkedIn" },
+  { icon: Mail, href: "mailto:codecraftai81@gmail.com", label: "Email" }
 ];
 
 const footerLinks = [
