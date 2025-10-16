@@ -10,19 +10,19 @@ const contactInfo = [
     icon: Mail,
     title: "Email Us",
     description: "Get in touch via email",
-    contact: "hello@codecraft-ai.com"
+    contact: "ummay480@gmail.com"
   },
   {
     icon: Phone,
     title: "Call Us",
     description: "Speak with our team",
-    contact: "+1 (555) 123-4567"
+    contact: "+92 324 920 8788"
   },
   {
     icon: MapPin,
     title: "Visit Us",
     description: "Our office location",
-    contact: "San Francisco, CA"
+    contact: "Nishter Road, Karachi"
   }
 ];
 
