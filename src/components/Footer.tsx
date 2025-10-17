@@ -1,7 +1,7 @@
 import { Facebook, Linkedin, Mail } from "lucide-react";
 
 const socialLinks = [
-  { icon: Facebook, href: "https://www.facebook.com/codecraftai81", label: "Facebook" },
+  { icon: Facebook, href: "https://www.facebook.com/codecraftai81/", label: "Facebook" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/codecraft-ai-45bb2834b/", label: "LinkedIn" },
   { icon: Mail, href: "mailto:codecraftai81@gmail.com", label: "Email" }
 ];
