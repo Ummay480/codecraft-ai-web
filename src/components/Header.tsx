@@ -15,11 +15,11 @@ const Header = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-          <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
-          <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-          <a href="#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
-          <a href="#team" className="text-foreground hover:text-primary transition-colors">Team</a>
+          <a href="/#home" className="text-foreground hover:text-primary transition-colors">Home</a>
+          <a href="/#services" className="text-foreground hover:text-primary transition-colors">Services</a>
+          <a href="/#about" className="text-foreground hover:text-primary transition-colors">About</a>
+          <a href="/#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
+          <a href="/#team" className="text-foreground hover:text-primary transition-colors">Team</a>
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
@@ -41,11 +41,11 @@ const Header = () => {
       {isMenuOpen && (
         <div className="md:hidden bg-background border-t border-border">
           <nav className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-            <a href="#home" className="text-foreground hover:text-primary transition-colors">Home</a>
-            <a href="#services" className="text-foreground hover:text-primary transition-colors">Services</a>
-            <a href="#about" className="text-foreground hover:text-primary transition-colors">About</a>
-            <a href="#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
-            <a href="#team" className="text-foreground hover:text-primary transition-colors">Team</a>
+            <a href="/#home" className="text-foreground hover:text-primary transition-colors">Home</a>
+            <a href="/#services" className="text-foreground hover:text-primary transition-colors">Services</a>
+            <a href="/#about" className="text-foreground hover:text-primary transition-colors">About</a>
+            <a href="/#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
+            <a href="/#team" className="text-foreground hover:text-primary transition-colors">Team</a>
             <div className="flex flex-col space-y-2 pt-4">
               <Button variant="hero" asChild>
                 <a href="/dashboard">Dashboard</a>
