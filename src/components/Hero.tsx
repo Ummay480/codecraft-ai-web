@@ -1,20 +1,81 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Sparkles } from "lucide-react";
-import heroImage from "@/assets/hero-bg.jpg";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect } from "react";
+import heroAiNeural from "@/assets/hero-ai-neural.jpg";
+import heroCoding from "@/assets/hero-coding.jpg";
+import heroTransformation from "@/assets/hero-transformation.jpg";
+import heroWebdev from "@/assets/hero-webdev.jpg";
+import heroAutomation from "@/assets/hero-automation.jpg";
+
+const heroSlides = [
+  {
+    image: heroAiNeural,
+    title: "Building Smarter Web Experiences with AI",
+    subtitle: "Harness the power of artificial intelligence to create intelligent, adaptive web solutions",
+  },
+  {
+    image: heroCoding,
+    title: "Where Code Meets Creativity",
+    subtitle: "Innovative development that transforms ideas into exceptional digital experiences",
+  },
+  {
+    image: heroTransformation,
+    title: "Empowering Businesses through Intelligent Automation",
+    subtitle: "Drive digital transformation with cutting-edge AI-powered automation solutions",
+  },
+  {
+    image: heroWebdev,
+    title: "The Future of Web Development is AI-Powered",
+    subtitle: "Next-generation web applications built with modern AI technologies",
+  },
+  {
+    image: heroAutomation,
+    title: "Seamless Integration with Agent SDK & n8n",
+    subtitle: "Powerful workflow automation and AI agents for your business processes",
+  },
+];
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
+    }, 4000); // Change every 4 seconds
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const currentContent = heroSlides[currentSlide];
+
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div className="pointer-events-none absolute inset-0 bg-gradient-subtle hero-pattern"></div>
-      <div 
-        className="pointer-events-none absolute inset-0 opacity-10"
-        style={{ 
-          backgroundImage: `url(${heroImage})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center'
-        }}
-      ></div>
+      {/* Animated Background Carousel */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentSlide}
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 1.2, ease: "easeInOut" }}
+          className="absolute inset-0"
+        >
+          <div 
+            className="absolute inset-0 opacity-40"
+            style={{ 
+              backgroundImage: `url(${currentContent.image})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              filter: 'blur(0px) brightness(0.7)',
+            }}
+          ></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80"></div>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Gradient Overlay */}
+      <div className="pointer-events-none absolute inset-0 bg-gradient-subtle opacity-30"></div>
 
       {/* Animated AI Background Elements */}
       <div className="pointer-events-none absolute inset-0">
@@ -54,52 +115,108 @@ const Hero = () => {
         <div className="absolute inset-0 bg-grid-pattern opacity-5 animate-grid-flow"></div>
       </div>
 
+      {/* Content Container with Glassmorphism */}
       <div className="relative z-10 container mx-auto px-4 text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 bg-accent/50 backdrop-blur-sm border border-accent-foreground/20 rounded-full px-4 py-2 mb-6">
-            <Sparkles className="w-4 h-4 text-primary" />
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 bg-accent/50 backdrop-blur-md border border-accent-foreground/20 rounded-full px-5 py-2.5 mb-8 shadow-soft"
+          >
+            <Sparkles className="w-4 h-4 text-primary animate-pulse" />
             <span className="text-sm font-medium text-accent-foreground">AI-Powered Development</span>
-          </div>
+          </motion.div>
 
-          {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-            <span className="bg-gradient-primary bg-clip-text text-transparent">CodeCraft AI</span>
-          </h1>
+          {/* Dynamic Heading with Animation */}
+          <AnimatePresence mode="wait">
+            <motion.h1
+              key={currentSlide}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight"
+            >
+              <span className="bg-gradient-primary bg-clip-text text-transparent">
+                {currentContent.title}
+              </span>
+            </motion.h1>
+          </AnimatePresence>
 
-          {/* Slogan */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Build smarter with AI crafts code
-          </p>
+          {/* Dynamic Subtitle with Animation */}
+          <AnimatePresence mode="wait">
+            <motion.p
+              key={`subtitle-${currentSlide}`}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              className="text-lg md:text-xl text-muted-foreground mb-10 max-w-3xl mx-auto"
+            >
+              {currentContent.subtitle}
+            </motion.p>
+          </AnimatePresence>
 
-          {/* Description */}
-          <p className="text-lg text-muted-foreground mb-10 max-w-3xl mx-auto">
-            Transform your ideas into powerful web applications with our cutting-edge AI development services. 
-            We combine human creativity with artificial intelligence to deliver exceptional results.
-          </p>
-
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="xl" className="group" asChild>
-              <a href="#contact">
+          {/* CTA Buttons with Glassmorphism */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+          >
+            <Button 
+              variant="hero" 
+              size="xl" 
+              className="group relative overflow-hidden backdrop-blur-sm shadow-strong hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] transition-all duration-300" 
+              asChild
+            >
+              <a href="#contact" className="relative z-10">
                 Start Your Project
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-            <Button variant="outline" size="xl" asChild>
+            <Button 
+              variant="outline" 
+              size="xl" 
+              className="backdrop-blur-sm bg-background/20 border-accent-foreground/30 hover:bg-background/40 hover:border-accent-foreground/50 shadow-medium transition-all duration-300"
+              asChild
+            >
               <a href="#projects">
                 <Code className="w-5 h-5" />
                 View Our Work
               </a>
             </Button>
-          </div>
+          </motion.div>
 
-          {/* Floating Elements */}
-          <div className="pointer-events-none absolute top-20 left-10 opacity-20 animate-float">
-            <div className="w-20 h-20 bg-gradient-primary rounded-full blur-xl"></div>
+          {/* Progress Indicators */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.6 }}
+            className="flex gap-2 justify-center mt-12"
+          >
+            {heroSlides.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  index === currentSlide 
+                    ? 'w-8 bg-primary shadow-[0_0_10px_hsl(var(--primary)/0.8)]' 
+                    : 'w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50'
+                }`}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </motion.div>
+
+          {/* Floating Glow Elements */}
+          <div className="pointer-events-none absolute top-20 left-10 opacity-30 animate-float blur-3xl">
+            <div className="w-32 h-32 bg-primary rounded-full"></div>
           </div>
-          <div className="pointer-events-none absolute bottom-20 right-10 opacity-20 animate-float" style={{ animationDelay: '1s' }}>
-            <div className="w-16 h-16 bg-primary-light rounded-full blur-xl"></div>
+          <div className="pointer-events-none absolute bottom-20 right-10 opacity-30 animate-float blur-3xl" style={{ animationDelay: '1s' }}>
+            <div className="w-24 h-24 bg-primary-light rounded-full"></div>
           </div>
         </div>
       </div>

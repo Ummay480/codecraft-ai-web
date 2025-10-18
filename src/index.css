@@ -298,4 +298,19 @@ All colors MUST be HSL.
   .pulse-glow {
     animation: pulseGlow 2s ease-in-out infinite;
   }
+
+  /* Glassmorphism utilities */
+  .glass {
+    background: hsl(var(--background) / 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--border) / 0.2);
+  }
+
+  .glass-strong {
+    background: hsl(var(--background) / 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid hsl(var(--border) / 0.3);
+  }
 }
