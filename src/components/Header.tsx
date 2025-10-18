@@ -10,7 +10,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <div className="flex items-center space-x-2">
-          <img src={logo} alt="CodeCraft AI Logo" className="h-10 w-auto" />
+          <img src={logo} alt="CodeCraft AI Logo" className="h-12 w-12 rounded-full object-cover" />
         </div>
 
         {/* Desktop Navigation */}
