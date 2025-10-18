@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const contactInfo = [
   {
@@ -27,10 +28,14 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+  const headerRef = useScrollAnimation();
+  const formRef = useScrollAnimation();
+  const infoRef = useScrollAnimation();
+  
   return (
     <section id="contact" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             Get In <span className="bg-gradient-primary bg-clip-text text-transparent">Touch</span>
           </h2>
@@ -41,7 +46,8 @@ const Contact = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className="shadow-medium border-border/50 bg-card/80 backdrop-blur-sm">
+          <div ref={formRef} className="animate-fade-in-left">
+            <Card className="shadow-medium border-border/50 bg-card/80 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-2xl font-semibold text-card-foreground">Send us a message</CardTitle>
               <CardDescription>
@@ -85,9 +91,10 @@ const Contact = () => {
               </Button>
             </CardContent>
           </Card>
+          </div>
 
           {/* Contact Information */}
-          <div className="space-y-8">
+          <div ref={infoRef} className="space-y-8 animate-fade-in-right">
             <div>
               <h3 className="text-2xl font-semibold text-foreground mb-4">Let's start a conversation</h3>
               <p className="text-muted-foreground mb-8">

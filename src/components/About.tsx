@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { CheckCircle, Users, Award, Lightbulb } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const stats = [
   { number: "100+", label: "Projects Completed" },
@@ -18,12 +19,15 @@ const features = [
 ];
 
 const About = () => {
+  const leftRef = useScrollAnimation();
+  const rightRef = useScrollAnimation();
+  
   return (
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Content */}
-          <div>
+          <div ref={leftRef} className="animate-fade-in-left">
             <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
               Why Choose <span className="bg-gradient-primary bg-clip-text text-transparent">CodeCraft AI</span>?
             </h2>
@@ -48,7 +52,7 @@ const About = () => {
           </div>
 
           {/* Right Column - Stats & Icons */}
-          <div className="space-y-8">
+          <div ref={rightRef} className="space-y-8 animate-fade-in-right">
             {/* Stats Grid */}
             <div className="grid grid-cols-2 gap-6">
               {stats.map((stat, index) => (

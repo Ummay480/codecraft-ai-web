@@ -1,8 +1,11 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Projects = () => {
+  const headerRef = useScrollAnimation();
+  
   const projects = [
     {
       title: "AI-Powered E-Commerce Platform",
@@ -57,7 +60,7 @@ const Projects = () => {
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-4xl font-bold text-foreground mb-4">Our Projects</h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Discover how we've helped businesses transform with AI-powered solutions and cutting-edge web technologies.
@@ -145,7 +148,7 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {projects.map((project, index) => (
-            <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/20">
+            <Card key={index} className={`group hover-lift border-border/50 hover:border-primary/20 animate-scale-in stagger-${(index % 6) + 1}`}>
               <div className="relative overflow-hidden rounded-t-lg">
                 <img 
                   src={project.image} 

@@ -1,5 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Brain, Code2, Smartphone, Zap, Globe, Database } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
   {
@@ -35,10 +36,12 @@ const services = [
 ];
 
 const Services = () => {
+  const headerRef = useScrollAnimation();
+  
   return (
     <section id="services" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
           </h2>
@@ -49,7 +52,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
-            <Card key={index} className="group hover:shadow-medium transition-all duration-300 hover:-translate-y-2 border-border/50 bg-card/80 backdrop-blur-sm">
+            <Card key={index} className={`group hover-lift border-border/50 bg-card/80 backdrop-blur-sm animate-scale-in stagger-${(index % 6) + 1}`}>
               <CardHeader>
                 <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
                   <service.icon className="w-6 h-6 text-primary-foreground" />
