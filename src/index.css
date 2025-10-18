@@ -124,6 +124,71 @@ All colors MUST be HSL.
     animation: float 3s ease-in-out infinite;
   }
 
+  /* Multiple float speeds for AI particles */
+  @keyframes float-slow {
+    0%, 100% { transform: translate(0, 0); }
+    25% { transform: translate(10px, -20px); }
+    50% { transform: translate(-10px, -40px); }
+    75% { transform: translate(5px, -20px); }
+  }
+
+  @keyframes float-medium {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33% { transform: translate(15px, -30px) scale(1.2); }
+    66% { transform: translate(-15px, -25px) scale(0.8); }
+  }
+
+  @keyframes float-fast {
+    0%, 100% { transform: translate(0, 0) rotate(0deg); }
+    50% { transform: translate(20px, -50px) rotate(180deg); }
+  }
+
+  .animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  .animate-float-medium {
+    animation: float-medium 6s ease-in-out infinite;
+  }
+
+  .animate-float-fast {
+    animation: float-fast 4s ease-in-out infinite;
+  }
+
+  /* Code snippet float animation */
+  @keyframes code-float {
+    0%, 100% { 
+      transform: translateY(0px) rotate(0deg);
+      opacity: 0.2;
+    }
+    50% { 
+      transform: translateY(-20px) rotate(2deg);
+      opacity: 0.3;
+    }
+  }
+
+  .animate-code-float {
+    animation: code-float 5s ease-in-out infinite;
+  }
+
+  /* Grid flow animation */
+  @keyframes grid-flow {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50px); }
+  }
+
+  .animate-grid-flow {
+    animation: grid-flow 20s linear infinite;
+  }
+
+  /* Grid pattern */
+  .bg-grid-pattern {
+    background-image: 
+      linear-gradient(hsl(var(--primary) / 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--primary) / 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+  }
+
   /* Scroll-triggered animations */
   @keyframes fadeInUp {
     from {
