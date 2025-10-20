@@ -78,6 +78,67 @@ All colors MUST be HSL.
 }
 
 @layer base {
+
+
+/* mobile-optimized swipe up */
+@keyframes swipeUp {
+  from {
+    opacity: 0;
+    transform: translateY(36px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* default (desktop) */
+.animate-swipe-up {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.animate-swipe-up.animate-in {
+  animation: swipeUp 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* mobile: smaller movement and slightly faster */
+@media (max-width: 640px) {
+  @keyframes swipeUpMobile {
+    from {
+      opacity: 0;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-swipe-up.animate-in {
+    animation-name: swipeUpMobile;
+    animation-duration: 0.6s;
+  }
+
+  /* reduce shadow / heavy paints on small screens */
+  .card-shadow-mobile {
+    box-shadow: 0 6px 18px -8px hsl(var(--primary) / 0.15);
+  }
+}
+
+/* Respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-swipe-up,
+  .animate-swipe-up.animate-in {
+    animation: none !important;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+
+
+
   * {
     @apply border-border;
   }
@@ -337,4 +398,30 @@ All colors MUST be HSL.
   background-size: 200% 200%;
   animation: background-shift 8s ease-in-out infinite;
   mix-blend-mode: overlay;
+}
+
+
+
+
+
+
+
+/* --- Scroll Swipe Up Animation --- */
+@keyframes swipeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-swipe-up {
+  opacity: 0;
+}
+
+.animate-swipe-up.animate-in {
+  animation: swipeUp 0.8s ease-out forwards;
 }

@@ -1,34 +1,42 @@
+// src/hooks/useScrollAnimation.ts
 import { useEffect, useRef } from 'react';
 
-export const useScrollAnimation = (threshold = 0.1) => {
-  const elementRef = useRef<HTMLDivElement>(null);
+type Options = {
+  threshold?: number;
+  rootMargin?: string;
+  once?: boolean;
+};
+
+export const useScrollAnimation = ({ threshold = 0.08, rootMargin = '0px 0px -120px 0px', once = true }: Options = {}) => {
+  const elementRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
+    const el = elementRef.current;
+    if (!el) return;
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate-in');
+            if (once && observer) {
+              observer.unobserve(entry.target);
+            }
           }
         });
       },
       {
         threshold,
-        rootMargin: '0px 0px -100px 0px',
+        rootMargin,
       }
     );
 
-    const currentElement = elementRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
-    }
+    observer.observe(el);
 
     return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
-      }
+      if (el) observer.unobserve(el);
     };
-  }, [threshold]);
+  }, [threshold, rootMargin, once]);
 
   return elementRef;
 };

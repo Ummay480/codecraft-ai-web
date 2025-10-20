@@ -37,11 +37,11 @@ const services = [
 
 const Services = () => {
   const headerRef = useScrollAnimation();
-  
+
   return (
     <section id="services" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
-        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
+        <div ref={headerRef as any} className="text-center mb-16 animate-on-scroll">
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
             Our <span className="bg-gradient-primary bg-clip-text text-transparent">Services</span>
           </h2>
@@ -51,21 +51,34 @@ const Services = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => (
-            <Card key={index} className={`group hover-lift border-border/50 bg-card/80 backdrop-blur-sm animate-scale-in stagger-${(index % 6) + 1}`}>
-              <CardHeader>
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-6 h-6 text-primary-foreground" />
-                </div>
-                <CardTitle className="text-xl font-semibold text-card-foreground">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </CardDescription>
-              </CardContent>
-            </Card>
-          ))}
+          {services.map((service, index) => {
+            const cardRef = useScrollAnimation({ threshold: 0.08, rootMargin: '0px 0px -120px 0px', once: true });
+
+            return (
+              <Card
+                key={index}
+                ref={cardRef as any}
+                className="border p-6 bg-white shadow-md rounded-lg animate-swipe-up card-shadow-mobile"
+                style={{ animationDelay: `${index * 0.12}s` }}
+              >
+                <CardHeader>
+                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
+                    <service.icon className="w-6 h-6 text-primary-foreground" />
+                  </div>
+                  <CardTitle className="text-xl font-semibold text-card-foreground">
+                    {service.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <CardDescription className="text-muted-foreground leading-relaxed">
+                    {service.description}
+                  </CardDescription>
+                </CardContent>
+              </Card>
+            );
+          })}
+
+
         </div>
       </div>
     </section>
