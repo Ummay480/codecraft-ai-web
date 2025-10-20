@@ -314,3 +314,27 @@ All colors MUST be HSL.
     border: 1px solid hsl(var(--border) / 0.3);
   }
 }
+
+@keyframes background-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-bg-shift {
+  background: linear-gradient(
+    120deg,
+    hsl(220 100% 30% / 0.6),
+    hsl(220 90% 45% / 0.6),
+    hsl(220 70% 20% / 0.6)
+  );
+  background-size: 200% 200%;
+  animation: background-shift 8s ease-in-out infinite;
+  mix-blend-mode: overlay;
+}

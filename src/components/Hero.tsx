@@ -13,28 +13,34 @@ const heroSlides = [
     image: heroAiNeural,
     title: "Building Smarter Web Experiences with AI",
     subtitle: "Harness the power of artificial intelligence to create intelligent, adaptive web solutions",
+    overlayColor: "rgba(255, 255, 255, 255)", // dark overlay
   },
   {
     image: heroCoding,
     title: "Where Code Meets Creativity",
     subtitle: "Innovative development that transforms ideas into exceptional digital experiences",
+    overlayColor: "rgba(10, 15, 40, 0.55)", // bluish dark
   },
   {
     image: heroTransformation,
     title: "Empowering Businesses through Intelligent Automation",
     subtitle: "Drive digital transformation with cutting-edge AI-powered automation solutions",
+    overlayColor: "rgba(20, 20, 20, 0.6)",
   },
   {
     image: heroWebdev,
     title: "The Future of Web Development is AI-Powered",
     subtitle: "Next-generation web applications built with modern AI technologies",
+    overlayColor: "rgba(0, 0, 0, 0.55)",
   },
   {
     image: heroAutomation,
     title: "Seamless Integration with Agent SDK & n8n",
     subtitle: "Powerful workflow automation and AI agents for your business processes",
+    overlayColor: "rgba(0, 10, 30, 0.6)",
   },
 ];
+
 
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -52,27 +58,55 @@ const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated Background Carousel */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentSlide}
-          initial={{ opacity: 0, scale: 1.1 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.95 }}
-          transition={{ duration: 1.2, ease: "easeInOut" }}
-          className="absolute inset-0"
-        >
-          <div 
-            className="absolute inset-0 opacity-40"
-            style={{ 
-              backgroundImage: `url(${currentContent.image})`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-              filter: 'blur(0px) brightness(0.7)',
-            }}
-          ></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/40 to-background/80"></div>
-        </motion.div>
-      </AnimatePresence>
+<AnimatePresence mode="wait">
+  <motion.div
+    key={currentSlide}
+    initial={{ opacity: 0, scale: 1.1 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 0.95 }}
+    transition={{ duration: 1.2, ease: "easeInOut" }}
+    className="absolute inset-0"
+  >
+    {/* Background Image */}
+    <div
+      className="absolute inset-0"
+      style={{
+        backgroundImage: `url(${currentContent.image})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        filter: "brightness(0.5)",
+      }}
+    ></div>
+
+    {/* Dynamic overlay based on slide */}
+    <div
+      className="absolute inset-0"
+      style={{
+        backgroundColor: currentContent.overlayColor,
+      }}
+    ></div>
+  </motion.div>
+</AnimatePresence>
+
+
+
+
+
+
+
+
+
+
+
+
+      {/* Animated Dark Overlay */}
+      <div className="absolute inset-0 animate-bg-shift"></div>
+
+
+
+
+
+
 
       {/* Gradient Overlay */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-subtle opacity-30"></div>
@@ -166,10 +200,10 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
-            <Button 
-              variant="hero" 
-              size="xl" 
-              className="group relative overflow-hidden backdrop-blur-sm shadow-strong hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] transition-all duration-300" 
+            <Button
+              variant="hero"
+              size="xl"
+              className="group relative overflow-hidden backdrop-blur-sm shadow-strong hover:shadow-[0_0_30px_hsl(var(--primary)/0.5)] transition-all duration-300"
               asChild
             >
               <a href="#contact" className="relative z-10">
@@ -177,9 +211,9 @@ const Hero = () => {
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
             </Button>
-            <Button 
-              variant="outline" 
-              size="xl" 
+            <Button
+              variant="outline"
+              size="xl"
               className="backdrop-blur-sm bg-background/20 border-accent-foreground/30 hover:bg-background/40 hover:border-accent-foreground/50 shadow-medium transition-all duration-300"
               asChild
             >
@@ -201,11 +235,10 @@ const Hero = () => {
               <button
                 key={index}
                 onClick={() => setCurrentSlide(index)}
-                className={`h-1.5 rounded-full transition-all duration-300 ${
-                  index === currentSlide 
-                    ? 'w-8 bg-primary shadow-[0_0_10px_hsl(var(--primary)/0.8)]' 
+                className={`h-1.5 rounded-full transition-all duration-300 ${index === currentSlide
+                    ? 'w-8 bg-primary shadow-[0_0_10px_hsl(var(--primary)/0.8)]'
                     : 'w-1.5 bg-muted-foreground/30 hover:bg-muted-foreground/50'
-                }`}
+                  }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
             ))}
