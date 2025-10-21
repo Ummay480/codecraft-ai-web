@@ -5,7 +5,7 @@ import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const Projects = () => {
   const headerRef = useScrollAnimation();
-  
+
   const projects = [
     {
       title: "AI-Powered E-Commerce Platform",
@@ -13,7 +13,7 @@ const Projects = () => {
       tech: ["React", "TypeScript", "Python", "TensorFlow", "PostgreSQL"],
       image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
     },
     {
       title: "Healthcare Management Dashboard",
@@ -21,7 +21,7 @@ const Projects = () => {
       tech: ["Next.js", "Node.js", "MongoDB", "Chart.js", "Tailwind CSS"],
       image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
     },
     {
       title: "Smart Financial Advisor",
@@ -29,7 +29,7 @@ const Projects = () => {
       tech: ["Vue.js", "Python", "FastAPI", "Redis", "Docker"],
       image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=250&fit=crop",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
     },
     {
       title: "Educational Learning Platform",
@@ -37,7 +37,7 @@ const Projects = () => {
       tech: ["React", "Express.js", "MySQL", "OpenAI API", "AWS"],
       image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=250&fit=crop",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
     },
     {
       title: "Real Estate Analytics Tool",
@@ -45,7 +45,7 @@ const Projects = () => {
       tech: ["Angular", "Spring Boot", "PostgreSQL", "Machine Learning", "Google Maps API"],
       image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "#",
     },
     {
       title: "Social Media Management Suite",
@@ -53,127 +53,74 @@ const Projects = () => {
       tech: ["React", "Node.js", "GraphQL", "MongoDB", "Social APIs"],
       image: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=400&h=250&fit=crop",
       liveUrl: "#",
-      githubUrl: "#"
-    }
+      githubUrl: "#",
+    },
   ];
 
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div ref={headerRef} className="text-center mb-16 animate-on-scroll">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Our Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+        {/* Header */}
+        <div ref={headerRef} className="text-center mb-10 animate-on-scroll">
+          <h2 className="text-4xl font-bold text-foreground mb-3">Our Projects</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Discover how we've helped businesses transform with AI-powered solutions and cutting-edge web technologies.
           </p>
         </div>
 
-        {/* Portfolio Video Showcase */}
-        <div className="mb-16 space-y-8">
-          <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden border-border/50">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl mb-2">AI Presentation Portfolio</CardTitle>
-                <CardDescription>Comprehensive AI-powered presentation and development showcase</CardDescription>
+        {/* === Videos Section === */}
+        <div className="space-y-8 mb-10">
+          {[
+            { title: "AI Presentation Portfolio", desc: "Comprehensive AI-powered presentation and development showcase", src: "/videos/AI-Presentation-Portfolio.mp4" },
+            { title: "Lovable Portfolio Showcase", desc: "Watch our latest Lovable projects in action", src: "/videos/Lovable-portfolio.mp4" },
+            { title: "Full Stack Next.js Projects", desc: "Our comprehensive Next.js development portfolio", src: "/videos/Web-Portfolio.mp4" },
+            { title: "OpenAI Agents Projects", desc: "Custom AI agents and automation solutions built with OpenAI SDK", src: "/videos/OpenAI-SDK-Portfolio.mp4" },
+          ].map((video, i) => (
+            <Card key={i} className="max-w-4xl mx-auto overflow-hidden border-border/50 shadow-sm hover:shadow-md transition-shadow">
+              <CardHeader className="text-center py-4">
+                <CardTitle className="text-2xl mb-1">{video.title}</CardTitle>
+                <CardDescription>{video.desc}</CardDescription>
               </CardHeader>
               <CardContent className="p-0">
-                <video 
-                  controls 
-                  className="w-full"
-                  preload="metadata"
-                >
-                  <source src="/videos/AI-Presentation-Portfolio.mp4" type="video/mp4" />
+                <video controls className="w-full aspect-video object-cover">
+                  <source src={video.src} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </CardContent>
             </Card>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden border-border/50">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl mb-2">Lovable Portfolio Showcase</CardTitle>
-                <CardDescription>Watch our latest Lovable projects in action</CardDescription>
-              </CardHeader>
-              <CardContent className="p-0">
-                <video 
-                  controls 
-                  className="w-full"
-                  preload="metadata"
-                >
-                  <source src="/videos/Lovable-portfolio.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden border-border/50">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl mb-2">Full Stack Next.js Projects</CardTitle>
-                <CardDescription>Our comprehensive Next.js development portfolio</CardDescription>
-              </CardHeader>
-              <CardContent className="p-0">
-                <video 
-                  controls 
-                  className="w-full"
-                  preload="metadata"
-                >
-                  <source src="/videos/Web-Portfolio.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="max-w-4xl mx-auto">
-            <Card className="overflow-hidden border-border/50">
-              <CardHeader className="text-center">
-                <CardTitle className="text-2xl mb-2">OpenAI Agents Projects</CardTitle>
-                <CardDescription>Custom AI agents and automation solutions built with OpenAI SDK</CardDescription>
-              </CardHeader>
-              <CardContent className="p-0">
-                <video 
-                  controls 
-                  className="w-full"
-                  preload="metadata"
-                >
-                  <source src="/videos/OpenAI-SDK-Portfolio.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-              </CardContent>
-            </Card>
-          </div>
+          ))}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {/* === Projects Grid === */}
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-10">
           {projects.map((project, index) => (
-            <Card key={index} className={`group hover-lift border-border/50 hover:border-primary/20 animate-scale-in stagger-${(index % 6) + 1}`}>
+            <Card
+              key={index}
+              className="group hover-lift border border-border/50 hover:border-primary/30 transition-all duration-300"
+            >
               <div className="relative overflow-hidden rounded-t-lg">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between">
                     <Button size="sm" variant="secondary" asChild>
-                      <a href="#contact">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
+                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                        <ExternalLink className="w-4 h-4 mr-2" /> Live Demo
                       </a>
                     </Button>
                     <Button size="sm" variant="secondary" asChild>
-                      <a href="#contact">
-                        <Github className="w-4 h-4 mr-2" />
-                        Code
+                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-2" /> Code
                       </a>
                     </Button>
                   </div>
                 </div>
               </div>
-              
-              <CardHeader>
+
+              <CardHeader className="pb-2">
                 <CardTitle className="text-xl group-hover:text-primary transition-colors">
                   {project.title}
                 </CardTitle>
@@ -181,12 +128,12 @@ const Projects = () => {
                   {project.description}
                 </CardDescription>
               </CardHeader>
-              
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {project.tech.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex}
+
+              <CardContent className="pt-0">
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
                       className="px-3 py-1 text-xs bg-primary/10 text-primary rounded-full border border-primary/20"
                     >
                       {tech}
@@ -198,11 +145,10 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12">
+        {/* === View All Button === */}
+        <div className="text-center mt-4">
           <Button variant="hero" size="lg" asChild>
-            <a href="#projects">
-              View All Projects
-            </a>
+            <a href="#projects">View All Projects</a>
           </Button>
         </div>
       </div>

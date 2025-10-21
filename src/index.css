@@ -298,10 +298,13 @@ All colors MUST be HSL.
   /* Animation classes */
   .animate-on-scroll {
     opacity: 0;
+    transform: translateY(20px);
+   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
   }
 
   .animate-on-scroll.animate-in {
     animation: fadeInUp 0.8s ease-out forwards;
+    transform: translateY(0);
   }
 
   .animate-fade-in-left {
