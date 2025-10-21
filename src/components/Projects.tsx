@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import health from "@/assets/Healthcare.webp";
 
 const Projects = () => {
   const headerRef = useScrollAnimation();
@@ -19,7 +20,7 @@ const Projects = () => {
       title: "Healthcare Management Dashboard",
       description: "Comprehensive patient management system with AI-driven analytics and appointment scheduling.",
       tech: ["Next.js", "Node.js", "MongoDB", "Chart.js", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop",
+      image: "https://cdn.dribbble.com/userupload/9512098/file/original-c59bf0ace598dead38158a74b5c67927.jpg?resize=1600x1200",
       liveUrl: "#",
       githubUrl: "#",
     },
