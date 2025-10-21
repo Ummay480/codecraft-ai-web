@@ -45,12 +45,7 @@ const teamMembers = [
     image: zainMalikImage,
     initials: "ZM",
   },
-  {
-    name: "Muhammad Ayan",
-    role: "Full-Stack Developer",
-    image: muhammadAyanImage,
-    initials: "MA",
-  },
+ 
 ];
 
 const Team = () => {
