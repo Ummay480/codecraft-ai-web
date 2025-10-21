@@ -1,5 +1,4 @@
 import { Facebook, Linkedin, Mail } from "lucide-react";
-import logo from "@/assets/WhatsApp Image 2025-10-21 at 3.58.18 PM (1).jpeg";
 
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/codecraftai81/", label: "Facebook" },
@@ -45,10 +44,8 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
-             <div className="flex items-center space-x-3">
-             <img src={logo} alt="CodeCraft AI Logo" className="h-12 w-12 rounded-full object-cover" />
-             <span className="text-xl font-bold text-foreground">CodeCraft AI</span>
-        </div>
+              <div className="w-8 h-8 bg-gradient-primary rounded-lg"></div>
+              <h3 className="text-xl font-bold text-foreground">CodeCraft AI</h3>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
               Building the future of web development with AI-powered solutions. 
