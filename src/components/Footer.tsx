@@ -1,4 +1,6 @@
 import { Facebook, Linkedin, Mail } from "lucide-react";
+import logo from "@/assets/logo.png";
+
 
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/codecraftai81/", label: "Facebook" },
@@ -45,6 +47,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="flex items-center space-x-2 mb-4">
               <div className="w-8 h-8 bg-gradient-primary rounded-lg"></div>
+              <img src={logo} alt="CodeCraft AI Logo" className="h-12 w-12 rounded-full object-cover" />
               <h3 className="text-xl font-bold text-foreground">CodeCraft AI</h3>
             </div>
             <p className="text-muted-foreground mb-6 max-w-md">
