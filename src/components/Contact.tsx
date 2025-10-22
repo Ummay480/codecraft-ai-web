@@ -20,33 +20,38 @@ const handleSubmit = (e: React.FormEvent) => {
 };
 
 
+
 const contactInfo = [
   {
     icon: Mail,
     title: "Email Us",
     description: "Get in touch via email",
-    contact: "codecraftai81@gmail.com"
+    contact: "codecraftai81@gmail.com",
+    href: "mailto:codecraftai81@gmail.com",
   },
   {
     icon: Phone,
     title: "Call Us",
     description: "Speak with our team",
-    contact: "+92 324 920 8788"
+    contact: "+92 324 920 8788",
+    href: "tel:+923249208788",
   },
   {
     icon: MapPin,
     title: "Visit Us",
     description: "Our office location",
-    contact: "Nishter Road, Karachi"
-  }
+    contact: "Nishter Road, Karachi",
+    href: "https://www.google.com/maps/place/Nishter+Road,+Karachi/",
+  },
 ];
+
 
 
 const Contact = () => {
   const headerRef = useScrollAnimation();
   const formRef = useScrollAnimation();
   const infoRef = useScrollAnimation();
-  
+
   return (
     <section id="contact" className="py-20 bg-gradient-subtle">
       <div className="container mx-auto px-4">
@@ -63,49 +68,55 @@ const Contact = () => {
           {/* Contact Form */}
           <div ref={formRef} className="animate-fade-in-left">
             <Card className="shadow-medium border-border/50 bg-card/80 backdrop-blur-sm">
-            <CardHeader>
-              <CardTitle className="text-2xl font-semibold text-card-foreground">Send us a message</CardTitle>
-              <CardDescription>
-                Fill out the form below and we'll get back to you within 24 hours
-              </CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input id="firstName" placeholder="John" />
+              <CardHeader>
+                <CardTitle className="text-2xl font-semibold text-card-foreground">Send us a message</CardTitle>
+                <CardDescription>
+                  Fill out the form below and we'll get back to you within 24 hours
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <Label htmlFor="firstName">First Name</Label>
+                    <Input id="firstName" placeholder="John" />
+                  </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="lastName">Last Name</Label>
+                    <Input id="lastName" placeholder="Doe" />
+                  </div>
                 </div>
+
                 <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input id="lastName" placeholder="Doe" />
+                  <Label htmlFor="email">Email</Label>
+                  <Input id="email" type="email" placeholder="john@example.com" />
                 </div>
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="john@example.com" />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="company">Company (Optional)</Label>
-                <Input id="company" placeholder="Your Company" />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="message">Message</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Tell us about your project..."
-                  className="min-h-[120px] resize-none"
-                />
-              </div>
-              
-              <Button variant="hero" size="lg" className="w-full">
-                <Send className="w-5 h-5" />
-                Send Message
-              </Button>
-            </CardContent>
-          </Card>
+
+                <div className="space-y-2">
+                  <Label htmlFor="company">Company (Optional)</Label>
+                  <Input id="company" placeholder="Your Company" />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="message">Message</Label>
+                  <Textarea
+                    id="message"
+                    placeholder="Tell us about your project..."
+                    className="min-h-[120px] resize-none"
+                  />
+                </div>
+
+                <Button
+                  variant="hero"
+                  size="lg"
+                  className="w-full"
+                  onClick={handleSubmit}
+                >
+                  <Send className="w-5 h-5" />
+                  Send Message
+                </Button>
+
+              </CardContent>
+            </Card>
           </div>
 
           {/* Contact Information */}
@@ -139,6 +150,7 @@ const Contact = () => {
                   </div>
                 </a>
               ))}
+
 
             </div>
 
