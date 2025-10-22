@@ -52,7 +52,7 @@ const Services = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => {
-            const cardRef = useScrollAnimation({ threshold: 0.08, rootMargin: '0px 0px -120px 0px', once: true });
+            const cardRef = useScrollAnimation();
 
             return (
               <Card

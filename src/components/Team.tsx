@@ -11,7 +11,7 @@ import fouziaImage from "@/assets/team-fouzia.jpg";
 import tayyabaImage from "@/assets/team-tayyaba.jpg";
 import darakhshanImage from "@/assets/team-darakhshan.jpg";
 import zainMalikImage from "@/assets/team-zain-malik.jpg";
-import muhammadAyanImage from "@/assets/team-muhammad-ayan.jpg";
+import aqsaImage from "@/assets/team-afshan-writer.jpg";
 
 // ✅ Team Data
 const teamMembers = [
@@ -19,6 +19,11 @@ const teamMembers = [
     name: "Ms. Ummay Kulsoom",
     role: "AI Engineer",
     image: ummayImage,
+    initials: "UK",
+  },{
+    name: "Ms. Aqsa Shah",
+    role: "full stack developer",
+    image: aqsaImage,
     initials: "UK",
   },
   {

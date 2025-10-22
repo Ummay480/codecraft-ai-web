@@ -9,51 +9,69 @@ const Projects = () => {
   const projects = [
     {
       title: "AI-Powered E-Commerce Platform",
-      description: "Smart product recommendations and inventory management system built with React and Python AI models.",
+      description:
+        "Smart product recommendations and inventory management system built with React and Python AI models.",
       tech: ["React", "TypeScript", "Python", "TensorFlow", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#",
+      image:
+        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
+      liveUrl: "https://hackhton3.vercel.app/",
+      githubUrl: "https://github.com/example/ai-ecommerce",
     },
     {
       title: "Healthcare Management Dashboard",
-      description: "Comprehensive patient management system with AI-driven analytics and appointment scheduling.",
+      description:
+        "Comprehensive patient management system with AI-driven analytics and appointment scheduling.",
       tech: ["Next.js", "Node.js", "MongoDB", "Chart.js", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#",
+      image:
+        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1115",
+      liveUrl: "https://healthcare-dashboard-demo.netlify.app",
+      githubUrl: "https://github.com/example/healthcare-dashboard",
     },
     {
-      title: "Smart Financial Advisor",
-      description: "AI-powered investment advisor with real-time market analysis and personalized recommendations.",
+      title: "disaster management system",
+      description:
+        "AI-based platform for disaster prediction, resource allocation, and real-time monitoring.",
       tech: ["Vue.js", "Python", "FastAPI", "Redis", "Docker"],
-      image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=400&h=250&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#",
+      image:
+        "https://images.unsplash.com/photo-1541710005980-7ea80ff232d6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkaXNhc3RlciUyMHJlbGllZnxlbnwwfHx8fDE3NTkyNTc4OTF8MA&ixlib=rb-4.1.0&q=80&w=1080%22,",
+      liveUrl: "https://disaster-management-liart.vercel.app/",
+      githubUrl: "https://github.com/example/smart-financial-advisor",
     },
     {
       title: "Educational Learning Platform",
-      description: "Interactive learning platform with AI tutoring and progress tracking for students.",
+      description:
+        "Interactive learning platform with AI tutoring and progress tracking for students.",
       tech: ["React", "Express.js", "MySQL", "OpenAI API", "AWS"],
-      image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=250&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#",
+      image:
+        "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=250&fit=crop",
+      liveUrl: "https://edu-ai-platform-demo.vercel.app",
+      githubUrl: "https://github.com/example/edu-ai-platform",
     },
     {
       title: "Real Estate Analytics Tool",
-      description: "Market analysis platform with predictive pricing models and property recommendations.",
-      tech: ["Angular", "Spring Boot", "PostgreSQL", "Machine Learning", "Google Maps API"],
-      image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#",
+      description:
+        "Market analysis platform with predictive pricing models and property recommendations.",
+      tech: [
+        "Angular",
+        "Spring Boot",
+        "PostgreSQL",
+        "Machine Learning",
+        "Google Maps API",
+      ],
+      image:
+        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop",
+      liveUrl: "https://realestate-analytics-demo.vercel.app",
+      githubUrl: "https://github.com/example/real-estate-analytics",
     },
     {
       title: "Social Media Management Suite",
-      description: "Comprehensive social media management with AI content generation and analytics.",
+      description:
+        "Comprehensive social media management with AI content generation and analytics.",
       tech: ["React", "Node.js", "GraphQL", "MongoDB", "Social APIs"],
-      image: "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=400&h=250&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#",
+      image:
+        "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=400&h=250&fit=crop",
+      liveUrl: "https://social-suite-demo.vercel.app",
+      githubUrl: "https://github.com/example/social-suite",
     },
   ];
 
@@ -62,21 +80,43 @@ const Projects = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-10 animate-on-scroll">
-          <h2 className="text-4xl font-bold text-foreground mb-3">Our Projects</h2>
+          <h2 className="text-4xl font-bold text-foreground mb-3">
+            Our Projects
+          </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover how we've helped businesses transform with AI-powered solutions and cutting-edge web technologies.
+            Discover how we've helped businesses transform with AI-powered
+            solutions and cutting-edge web technologies.
           </p>
         </div>
 
         {/* === Videos Section === */}
         <div className="space-y-8 mb-10">
           {[
-            { title: "AI Presentation Portfolio", desc: "Comprehensive AI-powered presentation and development showcase", src: "/videos/AI-Presentation-Portfolio.mp4" },
-            { title: "Lovable Portfolio Showcase", desc: "Watch our latest Lovable projects in action", src: "/videos/Lovable-portfolio.mp4" },
-            { title: "Full Stack Next.js Projects", desc: "Our comprehensive Next.js development portfolio", src: "/videos/Web-Portfolio.mp4" },
-            { title: "OpenAI Agents Projects", desc: "Custom AI agents and automation solutions built with OpenAI SDK", src: "/videos/OpenAI-SDK-Portfolio.mp4" },
+            {
+              title: "AI Presentation Portfolio",
+              desc: "Comprehensive AI-powered presentation and development showcase",
+              src: "/videos/AI-Presentation-Portfolio.mp4",
+            },
+            {
+              title: "Lovable Portfolio Showcase",
+              desc: "Watch our latest Lovable projects in action",
+              src: "/videos/Lovable-portfolio.mp4",
+            },
+            {
+              title: "Full Stack Next.js Projects",
+              desc: "Our comprehensive Next.js development portfolio",
+              src: "/videos/Web-Portfolio.mp4",
+            },
+            {
+              title: "OpenAI Agents Projects",
+              desc: "Custom AI agents and automation solutions built with OpenAI SDK",
+              src: "/videos/OpenAI-SDK-Portfolio.mp4",
+            },
           ].map((video, i) => (
-            <Card key={i} className="max-w-4xl mx-auto overflow-hidden border-border/50 shadow-sm hover:shadow-md transition-shadow">
+            <Card
+              key={i}
+              className="max-w-4xl mx-auto overflow-hidden border-border/50 shadow-sm hover:shadow-md transition-shadow"
+            >
               <CardHeader className="text-center py-4">
                 <CardTitle className="text-2xl mb-1">{video.title}</CardTitle>
                 <CardDescription>{video.desc}</CardDescription>
@@ -107,12 +147,20 @@ const Projects = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <div className="absolute bottom-4 left-4 right-4 flex justify-between">
                     <Button size="sm" variant="secondary" asChild>
-                      <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.liveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <ExternalLink className="w-4 h-4 mr-2" /> Live Demo
                       </a>
                     </Button>
                     <Button size="sm" variant="secondary" asChild>
-                      <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <Github className="w-4 h-4 mr-2" /> Code
                       </a>
                     </Button>
