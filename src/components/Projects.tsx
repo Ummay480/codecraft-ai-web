@@ -2,6 +2,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
+import health from "@/assets/Healthcare.webp";
 
 const Projects = () => {
   const headerRef = useScrollAnimation();
@@ -22,10 +23,9 @@ const Projects = () => {
       description:
         "Comprehensive patient management system with AI-driven analytics and appointment scheduling.",
       tech: ["Next.js", "Node.js", "MongoDB", "Chart.js", "Tailwind CSS"],
-      image:
-        "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1115",
-      liveUrl: "https://healthcare-dashboard-demo.netlify.app",
-      githubUrl: "https://github.com/example/healthcare-dashboard",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop",
+      liveUrl: "#",
+      githubUrl: "#",
     },
     {
       title: "disaster management system",
