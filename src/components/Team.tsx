@@ -20,11 +20,6 @@ const teamMembers = [
     role: "AI Engineer",
     image: ummayImage,
     initials: "UK",
-  },{
-    name: "Ms. Aqsa Shah",
-    role: "full stack developer",
-    image: aqsaImage,
-    initials: "UK",
   },
   {
     name: "Ms. Fouzia",

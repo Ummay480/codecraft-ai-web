@@ -9,35 +9,35 @@ const socialLinks = [
   { icon: Mail, href: "mailto:codecraftai81@gmail.com", label: "Email" },
 ];
 
-const footerLinks = [
-  {
-    title: "Services",
-    links: [
-      { name: "Web Development", href: "#webdevelopment" },
-      { name: "AI Solutions", href: "/ai-solutions" },
-      { name: "Mobile Apps", href: "/mobile-apps" },
-      { name: "Consulting", href: "/consulting" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { name: "About Us", href: "/about" },
-      { name: "Our Team", href: "/team" },
-      { name: "Careers", href: "/careers" },
-      { name: "Contact", href: "/#contact" }
-    ]
-  },
-  {
-    title: "Resources",
-    links: [
-      { name: "Blog", href: "/Blog" },
-      { name: "Case Studies", href: "/Case-studies" },
-      { name: "Documentation", href: "/Documentation" },
-      { name: "Support", href: "/Support" }
-    ]
-  }
-];
+// const footerLinks = [
+//   {
+//     title: "Services",
+//     links: [
+//       { name: "Web Development", href: "#webdevelopment" },
+//       { name: "AI Solutions", href: "/ai-solutions" },
+//       { name: "Mobile Apps", href: "/mobile-apps" },
+//       { name: "Consulting", href: "/consulting" },
+//     ],
+//   },
+//   {
+//     title: "Company",
+//     links: [
+//       { name: "About Us", href: "/about" },
+//       { name: "Our Team", href: "/team" },
+//       { name: "Careers", href: "/careers" },
+//       { name: "Contact", href: "/#contact" }
+//     ]
+//   },
+//   {
+//     title: "Resources",
+//     links: [
+//       { name: "Blog", href: "/Blog" },
+//       { name: "Case Studies", href: "/Case-studies" },
+//       { name: "Documentation", href: "/Documentation" },
+//       { name: "Support", href: "/Support" }
+//     ]
+//   }
+// ];
 
 const Footer = () => {
   // ✅ Smooth scrolling for anchor links
@@ -98,7 +98,7 @@ const Footer = () => {
           </div>
 
           {/* Footer Links */}
-          {footerLinks.map((section, index) => (
+          {/* {footerlinks.map((section, index) => (
             <div key={index}>
               <h4 className="font-semibold text-foreground mb-4">{section.title}</h4>
               <ul className="space-y-2">
@@ -114,10 +114,10 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-          ))}
+          ))} */}
         </div>
 
-        {/* --- Bottom Section --- */}
+        --- Bottom Section ---
         <div className="border-t border-border pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="text-muted-foreground text-sm">
