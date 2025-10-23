@@ -71,7 +71,7 @@ const Projects = () => {
       tech: ["React", "Node.js", "GraphQL", "MongoDB", "Social APIs"],
       image:
         "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=400&h=250&fit=crop",
-      liveUrl: "https://social-suite-demo.vercel.app",
+      liveUrl: "social-zenith-56.lovable.app",
       githubUrl: "https://github.com/example/social-suite",
     },
   ];
