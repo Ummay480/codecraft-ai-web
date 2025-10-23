@@ -2,7 +2,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import  agentia  from "@/assets/agentia.png"
+import  agentia  from "@/assets/agentia.png";
+import  agentia  from "@/assets/Lap-top Place.png"
 import panacloud from "@/assets/panacloud.png";
 
 const Projects = () => {
@@ -13,10 +14,10 @@ const Projects = () => {
       title: "AI-Powered E-Commerce Platform",
       description:
         "Smart product recommendations and inventory management system built with React and Python AI models.",
-      tech: ["React", "TypeScript", "Python", "TensorFlow", "PostgreSQL"],
+      tech: ["Prompt Engineering", "Lovable", "Supabse", "n8n", ],
       image:
-        "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=250&fit=crop",
-      liveUrl: "https://hackhton3.vercel.app/",
+        "Lap-top Place",
+      liveUrl: "lap-assist-hub.lovable.app/",
       githubUrl: "https://github.com/example/ai-ecommerce",
     },
     {
@@ -70,7 +71,7 @@ const Projects = () => {
       tech: ["React", "Node.js", "GraphQL", "MongoDB", "Social APIs"],
       image:
         "https://images.unsplash.com/photo-1611926653458-09294b3142bf?w=400&h=250&fit=crop",
-      liveUrl: "https://social-suite-demo.vercel.app",
+      liveUrl: "social-zenith-56.lovable.app",
       githubUrl: "https://github.com/example/social-suite",
     },
   ];
