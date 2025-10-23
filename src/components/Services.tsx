@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Code2, Smartphone, Zap, Globe, Database } from "lucide-react";
+import { Brain, Code2, Smartphone, Zap, Globe, Database, PaintbrushIcon } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const services = [
@@ -32,6 +32,10 @@ const services = [
     icon: Database,
     title: "Data Integration",
     description: "Seamless integration with APIs, databases, and third-party services to power your applications."
+  },{
+    icon: PaintbrushIcon,
+    title: "Graphic Design",
+    description: "unique and engaging visual content including logos, branding, and marketing materials."
   }
 ];
 

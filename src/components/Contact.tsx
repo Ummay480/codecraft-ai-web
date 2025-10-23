@@ -26,19 +26,22 @@ const contactInfo = [
     icon: Mail,
     title: "Email Us",
     description: "Get in touch via email",
-    contact: "codecraftai81@gmail.com"
+    contact: "codecraftai81@gmail.com",
+    href: "mailto:codecraftai81@gmail.com"
   },
   {
     icon: Phone,
     title: "Call Us",
     description: "Speak with our team",
-    contact: "+92 324 920 8788"
+    contact: "+92 324 920 8788",
+    href: "tel:+923249208788"
   },
   {
     icon: MapPin,
     title: "Visit Us",
     description: "Our office location",
-    contact: "Nishter Road, Karachi"
+    contact: "Nishter Road, Karachi",
+    href: "https://www.google.com/maps/search/?api=1&query=Nishter+Road+Karachi"
   }
 ];
 

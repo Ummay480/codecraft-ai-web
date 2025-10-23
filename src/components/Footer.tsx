@@ -1,120 +1,69 @@
-import { Facebook, Linkedin, Mail } from "lucide-react";
+import { Facebook, Linkedin, Mail, Instagram } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const socialLinks = [
   { icon: Facebook, href: "https://www.facebook.com/codecraftai81/", label: "Facebook" },
   { icon: Linkedin, href: "https://www.linkedin.com/in/codecraft-ai-45bb2834b/", label: "LinkedIn" },
+  { icon: Instagram, href: "https://www.instagram.com/codecraftai81/", label: "Instagram" },
   { icon: Mail, href: "mailto:codecraftai81@gmail.com", label: "Email" },
-];
-
-const footerLinks = [
-  {
-    title: "Services",
-    links: [
-      { name: "Web Development", href: "#webdevelopment" },
-      { name: "AI Solutions", href: "/ai-solutions" },
-      { name: "Mobile Apps", href: "/mobile-apps" },
-      { name: "Consulting", href: "/consulting" },
-    ],
-  },
-  {
-    title: "Company",
-    links: [
-      { name: "About Us", href: "/about" },
-      { name: "Our Team", href: "/team" },
-      { name: "Careers", href: "/careers" },
-      { name: "Contact", href: "/#contact" }
-    ]
-  },
-  {
-    title: "Resources",
-    links: [
-      { name: "Blog", href: "/Blog" },
-      { name: "Case Studies", href: "/Case-studies" },
-      { name: "Documentation", href: "/Documentation" },
-      { name: "Support", href: "/Support" }
-    ]
-  }
 ];
 
 const Footer = () => {
   return (
-    <footer className="bg-background border-t border-border">
-      <div className="container mx-auto px-4 py-12">
-        {/* --- Main layout --- */}
-        <div className="flex flex-col lg:flex-row justify-between gap-12 mb-10">
-          {/* --- Left: Brand Section --- */}
-          <div className="lg:w-1/2">
-            <div className="flex items-center space-x-2 mb-4">
-              <img
-                src={logo}
-                alt="CodeCraft AI Logo"
-                className="h-12 w-12 rounded-full object-cover"
-              />
-              <h3 className="text-xl font-bold text-foreground">CodeCraft AI</h3>
-            </div>
+    <footer className="bg-background/80 backdrop-blur-md border-b border-border mt-16">
+      <div className="container mx-auto px-4 py-12 flex flex-col items-center text-center">
+        
+        {/* --- Logo & Brand --- */}
+        <div className="flex items-center space-x-3 mb-4">
+          <img
+            src={logo}
+            alt="CodeCraft AI Logo"
+            className="h-12 w-12 rounded-full object-cover shadow-lg ring-2 ring-blue-800/30"
+          />
+          <h3 className="text-2xl font-semibold text-primary">CodeCraft AI</h3>
+        </div>
 
-            <p className="text-muted-foreground mb-6 max-w-md">
-              Building the future of web development with AI-powered solutions.
-              Transform your ideas into exceptional digital experiences.
-            </p>
+        {/* --- Tagline --- */}
+        <p className="text-muted-foreground max-w-md mb-6 text-sm md:text-base">
+          Building the future of web development with AI-powered solutions.  
+          Turning your innovative ideas into extraordinary digital experiences.
+        </p>
 
-            {/* Social Links */}
-            <div className="flex space-x-4">
-              {socialLinks.map((social, index) => (
-                <a
-                  key={index}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-10 h-10 bg-accent hover:bg-primary rounded-lg flex items-center justify-center transition-colors duration-300 group"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5 text-accent-foreground group-hover:text-primary-foreground transition-colors" />
-                </a>
-              ))}
-            </div>
-          </div>
+        {/* --- Footer Navigation Links --- */}
+        <div className="flex flex-wrap justify-center space-x-6 mb-8 text-sm font-medium">
+          <a href="/#about" className="text-primary hover:text-foreground transition-colors">
+            About
+          </a>
+          <a href="/#services" className="text-primary hover:text-foreground transition-colors">
+            Services
+          </a>
+          <a href="/#contact" className="text-primary hover:text-foreground transition-colors">
+            Contact
+          </a>
+        </div>
 
-          {/* Footer Links */}
-          {footerLinks.map((section, index) => (
-            <div key={index}>
-              <h4 className="font-semibold text-foreground mb-4">{section.title}</h4>
-              <ul className="space-y-2">
-                {section.links.map((link, linkIndex) => (
-                  <li key={linkIndex}>
-                    <a 
-                      href={link.href} 
-                      className="text-muted-foreground hover:text-primary transition-colors duration-300"
-                    >
-                      {link.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+        {/* --- Social Links --- */}
+        <div className="flex space-x-5 mb-8">
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={social.label}
+              className="w-10 h-10 flex items-center justify-center rounded-xl bg-foreground hover:bg-primary transition-all duration-300 hover:scale-110 shadow-md group"
+            >
+              <social.icon className="w-5 h-5 text-gray-300 group-hover:text-white transition-colors" />
+            </a>
           ))}
         </div>
 
-        --- Bottom Section ---
-        <div className="border-t border-border pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-muted-foreground text-sm">
-              © 2024 CodeCraft AI. All rights reserved.
-            </div>
-
-            <div className="flex space-x-6 text-sm">
-              <a href="/#about" className="text-muted-foreground hover:text-primary transition-colors">
-                About
-              </a>
-              <a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">
-                Services
-              </a>
-              <a href="/#contact" className="text-muted-foreground hover:text-primary transition-colors">
-                Contact
-              </a>
-            </div>
-          </div>
+        {/* --- Bottom Text --- */}
+        <div className="w-full border-t  pt-6 text-sm text-gray-900 flex flex-col md:flex-row justify-between items-center gap-3">
+          <span>© 2025 CodeCraft AI. All rights reserved.</span>
+          <span className="text-xs md:text-sm">
+            Made with ❤️ by <span className="text-primary font-medium">CodeCraft Team</span>
+          </span>
         </div>
       </div>
     </footer>

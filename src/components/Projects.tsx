@@ -45,7 +45,7 @@ const Projects = () => {
       tech: ["React", "Express.js", "MySQL", "OpenAI API", "AWS"],
       image:
         "https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=400&h=250&fit=crop",
-      liveUrl: "https://edu-ai-platform-demo.vercel.app",
+      liveUrl: "https://education-learning-platfrom-thk4.vercel.app/",
       githubUrl: "https://github.com/example/edu-ai-platform",
     },
     {
