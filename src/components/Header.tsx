@@ -43,8 +43,7 @@ const Header = () => {
             <a href="/#about" className="text-foreground hover:text-primary transition-colors">About</a>
             <a href="/#projects" className="text-foreground hover:text-primary transition-colors">Projects</a>
             <a href="/#team" className="text-foreground hover:text-primary transition-colors">Team</a>
-            
-          </nav>
+         </nav>
         </div>
       )}
     </header>
