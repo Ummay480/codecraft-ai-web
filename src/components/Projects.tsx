@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 import  agentia  from "@/assets/agentia.png";
-import  agentia  from "@/assets/Lap-top Place.png"
 import panacloud from "@/assets/panacloud.png";
 
 const Projects = () => {
