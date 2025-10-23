@@ -1,5 +1,3 @@
-"use client";
-import { useEffect } from "react";
 import { Facebook, Linkedin, Mail } from "lucide-react";
 import logo from "@/assets/logo.png";
 
@@ -9,63 +7,44 @@ const socialLinks = [
   { icon: Mail, href: "mailto:codecraftai81@gmail.com", label: "Email" },
 ];
 
-// const footerLinks = [
-//   {
-//     title: "Services",
-//     links: [
-//       { name: "Web Development", href: "#webdevelopment" },
-//       { name: "AI Solutions", href: "/ai-solutions" },
-//       { name: "Mobile Apps", href: "/mobile-apps" },
-//       { name: "Consulting", href: "/consulting" },
-//     ],
-//   },
-//   {
-//     title: "Company",
-//     links: [
-//       { name: "About Us", href: "/about" },
-//       { name: "Our Team", href: "/team" },
-//       { name: "Careers", href: "/careers" },
-//       { name: "Contact", href: "/#contact" }
-//     ]
-//   },
-//   {
-//     title: "Resources",
-//     links: [
-//       { name: "Blog", href: "/Blog" },
-//       { name: "Case Studies", href: "/Case-studies" },
-//       { name: "Documentation", href: "/Documentation" },
-//       { name: "Support", href: "/Support" }
-//     ]
-//   }
-// ];
+const footerLinks = [
+  {
+    title: "Services",
+    links: [
+      { name: "Web Development", href: "#webdevelopment" },
+      { name: "AI Solutions", href: "/ai-solutions" },
+      { name: "Mobile Apps", href: "/mobile-apps" },
+      { name: "Consulting", href: "/consulting" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { name: "About Us", href: "/about" },
+      { name: "Our Team", href: "/team" },
+      { name: "Careers", href: "/careers" },
+      { name: "Contact", href: "/#contact" }
+    ]
+  },
+  {
+    title: "Resources",
+    links: [
+      { name: "Blog", href: "/Blog" },
+      { name: "Case Studies", href: "/Case-studies" },
+      { name: "Documentation", href: "/Documentation" },
+      { name: "Support", href: "/Support" }
+    ]
+  }
+];
 
 const Footer = () => {
-  // ✅ Smooth scrolling for anchor links
-  useEffect(() => {
-    const handleSmoothScroll = (e: Event) => {
-      const target = e.target as HTMLAnchorElement;
-      if (target.tagName === "A" && target.getAttribute("href")?.startsWith("#")) {
-        e.preventDefault();
-        const id = target.getAttribute("href")?.replace("#", "");
-        const section = document.getElementById(id!);
-        if (section) {
-          window.scrollTo({
-            top: section.offsetTop - 80, // adjust offset if navbar overlaps
-            behavior: "smooth",
-          });
-        }
-      }
-    };
-    document.addEventListener("click", handleSmoothScroll);
-    return () => document.removeEventListener("click", handleSmoothScroll);
-  }, []);
-
   return (
     <footer className="bg-background border-t border-border">
       <div className="container mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8">
-          {/* Brand Section */}
-          <div className="lg:col-span-2">
+        {/* --- Main layout --- */}
+        <div className="flex flex-col lg:flex-row justify-between gap-12 mb-10">
+          {/* --- Left: Brand Section --- */}
+          <div className="lg:w-1/2">
             <div className="flex items-center space-x-2 mb-4">
               <img
                 src={logo}
@@ -98,7 +77,7 @@ const Footer = () => {
           </div>
 
           {/* Footer Links */}
-          {/* {footerlinks.map((section, index) => (
+          {footerLinks.map((section, index) => (
             <div key={index}>
               <h4 className="font-semibold text-foreground mb-4">{section.title}</h4>
               <ul className="space-y-2">
@@ -114,7 +93,7 @@ const Footer = () => {
                 ))}
               </ul>
             </div>
-          ))} */}
+          ))}
         </div>
 
         --- Bottom Section ---
@@ -125,13 +104,13 @@ const Footer = () => {
             </div>
 
             <div className="flex space-x-6 text-sm">
-              <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="/#about" className="text-muted-foreground hover:text-primary transition-colors">
                 About
               </a>
-              <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="/#services" className="text-muted-foreground hover:text-primary transition-colors">
                 Services
               </a>
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="/#contact" className="text-muted-foreground hover:text-primary transition-colors">
                 Contact
               </a>
             </div>

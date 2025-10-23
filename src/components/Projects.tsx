@@ -2,7 +2,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
-import health from "@/assets/Healthcare.webp";
+import  agentia  from "@/assets/agentia.png"
+import panacloud from "@/assets/panacloud.png";
 
 const Projects = () => {
   const headerRef = useScrollAnimation();
@@ -19,13 +20,13 @@ const Projects = () => {
       githubUrl: "https://github.com/example/ai-ecommerce",
     },
     {
-      title: "Healthcare Management Dashboard",
+      title: "Agentia World",
       description:
-        "Comprehensive patient management system with AI-driven analytics and appointment scheduling.",
+        "A modern business agency website built with Next.js and Tailwind CSS. Showcasing smooth animations, responsive layouts, and a professional brand identity..",
       tech: ["Next.js", "Node.js", "MongoDB", "Chart.js", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=250&fit=crop",
-      liveUrl: "#",
-      githubUrl: "#",
+      image: agentia,   
+      liveUrl: "https://agentia-world-five.vercel.app/",
+      githubUrl: "https://github.com/MaliaRK/Agentia_World.git",
     },
     {
       title: "disaster management system",
@@ -48,20 +49,19 @@ const Projects = () => {
       githubUrl: "https://github.com/example/edu-ai-platform",
     },
     {
-      title: "Real Estate Analytics Tool",
+      title: "Panacloud Website Clone",
       description:
-        "Market analysis platform with predictive pricing models and property recommendations.",
+        "A beautifully recreated version of the Panacloud site using React and modern UI principles. Focused on performance, pixel-perfect design, and dynamic animations.",
       tech: [
-        "Angular",
-        "Spring Boot",
+        "TypeScript",
+        "Custom CSS",
         "PostgreSQL",
         "Machine Learning",
         "Google Maps API",
       ],
-      image:
-        "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400&h=250&fit=crop",
-      liveUrl: "https://realestate-analytics-demo.vercel.app",
-      githubUrl: "https://github.com/example/real-estate-analytics",
+      image: panacloud,
+      liveUrl: "https://final-assignment-company-portfolio.vercel.app/",
+      githubUrl: "https://github.com/MaliaRK/final_assignment_company_portfolio.git",
     },
     {
       title: "Social Media Management Suite",
