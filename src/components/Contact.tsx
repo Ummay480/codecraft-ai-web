@@ -33,7 +33,7 @@ const contactInfo = [
     icon: Phone,
     title: "Call Us",
     description: "Speak with our team",
-    contact: "+92 324 920 8788",'+92 305 1804555
+    contact: "'+92 305 1804555",
     href: "tel:+92 305 1804555"
   },
   {
